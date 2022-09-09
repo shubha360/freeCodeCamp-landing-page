@@ -1,10 +1,13 @@
 :root {
     /* USED FONTS */
-    --paragraph-font: Arial;
-    --heading-font1: Arial;
-    --heading-font2: Arial;
+    --paragraph-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --heading-font2: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* USED COLORS */
+    --primary-color1: rgb(116, 33, 0);
+    --secondary-color: rgb(252, 248, 215);
+    --footer-color: wheat;
 }
+
 
 * {
     box-sizing: border-box;
@@ -18,13 +21,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: var(--secondary-color);
 }
 
 /* PAGE WIDE STYLES */
 
 h1 {
     font-family: var(--heading-font2);
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 h2 {
@@ -37,15 +41,29 @@ h3 {
     font-size: 1.8rem;
 }
 
-a, p, input, li {
+a, p, input, button {
     font-family: var(--paragraph-font);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
+
+button, input[type="submit"] {
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 5px;
+    background-color: var(--primary-color1);
+    color: white;
+    cursor: pointer;
+}
+
 
 .line-breaker {
     width: 100%;
     margin: 0;
 }
+
+/* NAVIGATION BAR */
 
 #header {
     position: fixed;
@@ -54,7 +72,7 @@ a, p, input, li {
     height: 6rem;
     display: flex;
     border-bottom: 1px solid;
-    background-color: chocolate;
+    background-color: var(--primary-color1);
 }
 
 .heading {
@@ -66,11 +84,15 @@ a, p, input, li {
 
 .heading h1 {
     margin: 0;
+    color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .heading img {
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
+    margin: 0 1% 0 6%;
+    cursor: pointer;
 }
 
 #nav-bar {
@@ -83,13 +105,22 @@ a, p, input, li {
 
 #nav-bar .nav-link {
     margin: 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+#nav-bar .nav-link:hover {
+    text-decoration: underline;
 }
 
 main {
-    width: 60%;
+    width: 50%;
     margin: 6rem auto 0 auto;
     padding-top: 3%;
 }
+
+/* WHY US SECTION */
 
 .why-card {
     display: flex;
@@ -116,12 +147,23 @@ main {
     width: 100%;
     margin: 0;
 }
+.why-card a {
+    color: black;
+}
 
-#get-yours-now {
+/* GOAT OWNER SECTION */
+
+#goat-owner * {
+    margin: 0;
+}
+
+#goat-owner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10vh 0;
+    margin-top: -3vh;
+    /* border: 1px solid; */
 }
 
 #form {
@@ -131,34 +173,43 @@ main {
     justify-content: center;
 }
 
-#get-yours-now * {
-    margin: 0;
-}
-
-#get-yours-now p {
+#goat-owner p {
+    font-weight: 700;
     font-size: 2rem;
+    text-align: center;
 }
 
-#get-yours-now #form {
+#goat-owner #form {
     margin-top: 3vh;
 }
 
 #form #email {
     width: 350px;
     padding: 5px;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color1);
+}
+
+#form #email:focus,
+#form #email:active {
+    outline: none;
 }
 
 #form #submit {
     width: 200px;
     margin-top: 10px;
-    padding: 5px;
+    padding: 8px;
 }
+
+/* SAY HELLO SECTION */
 
 .video {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
+/* PRICING SECTION */
 
 #pricing {
     width: 100%;
@@ -167,17 +218,118 @@ main {
     margin: 10vh 0;
 }
 
-.price-box {
-    width: 32%;
-    border: 1px solid black;
+.price-box * {
+    text-align: center;
+    margin: 0 auto;
 }
 
+.price-box {
+    width: 32%;
+    border: 3px solid var(--primary-color1);
+    border-radius: 10px;
+}
+
+.price-box .head-box {
+    width: 100%;
+    background-color: var(--primary-color1);
+    padding: 10px 0;
+}
+
+.price-box h3 {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+.price-box .price {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 1.5vh auto 3vh auto;
+    color: black;
+}
+
+.price-box .point {
+    margin-bottom: 10px;
+}
+
+.price-box .button-div {
+    width: 100;
+    margin: 2vh auto 2vh auto;
+}
+
+.price-box button {
+    margin-top: 2vh;
+    padding: 8px 10px;
+}
+
+/* FOOTER */
 
 footer {
     width: 100%;
-    background-color: wheat;
+    background-color: var(--footer-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(images/footer-goat.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7%;
 }
 
 footer * {
     margin: 0;
+}
+
+footer a {
+    color: var(--primary-color1);
+}
+
+footer .icons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    padding-left: 3%;
+}
+
+footer .icons .link-div {
+    width: 100%;
+    margin: 0.3vh;
+}
+
+footer .icons p {
+    margin-bottom: 1vh;
+}
+
+footer .icons a {
+    margin-left: 20px;
+}
+
+footer .foot-items {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.foot-items a {
+    margin-right: 5%;
+}
+
+.foot-items p {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 1300px) {
+    main {
+        width: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        width: 90%;
+    }
 }
