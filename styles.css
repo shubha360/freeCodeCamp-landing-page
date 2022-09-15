@@ -306,6 +306,12 @@ footer .icons a {
     margin-left: 20px;
 }
 
+footer .icons a::after,
+.my-link::after {
+    content: url(images/external-link.svg);
+    margin-left: 3px;
+}
+
 footer .foot-items {
     width: 30%;
     display: flex;
